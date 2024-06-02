@@ -14,8 +14,6 @@ provider "env0" {
 resource "env0_project" "team_project" {
   name        = var.team_name
   description = "Team project for ${var.team_name}"
-
-  policies = var.policies
 }
 
 resource "env0_project" "environment_projects" {
