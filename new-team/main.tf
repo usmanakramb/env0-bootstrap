@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    env0 = {
-      source = "env0/env0"
-    }
-  }
-}
-
-provider "env0" {
-  api_key    = var.env0_api_key
-  api_secret = var.env0_api_secret
-}
-
 resource "env0_project" "team_project" {
   name        = var.team_name
   description = "Team project for ${var.team_name}"
