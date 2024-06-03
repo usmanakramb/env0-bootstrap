@@ -23,5 +23,33 @@ variable "team_environments" {
 variable "policies" {
   description = "Policies in JSON format"
   type        = map(any)
-  default     = {}
+  default     = {
+    dev = {
+      number_of_environments        = 1
+      number_of_environments_total  = 1
+      requires_approval_default     = true
+      include_cost_estimation       = true
+      skip_apply_when_plan_is_empty = true
+      disable_destroy_environments  = true
+      skip_redundant_deployments    = true
+    }
+    stage = {
+      number_of_environments        = 2
+      number_of_environments_total  = 2
+      requires_approval_default     = false
+      include_cost_estimation       = true
+      skip_apply_when_plan_is_empty = false
+      disable_destroy_environments  = true
+      skip_redundant_deployments    = false
+    }
+    prod = {
+      number_of_environments        = 3
+      number_of_environments_total  = 3
+      requires_approval_default     = true
+      include_cost_estimation       = true
+      skip_apply_when_plan_is_empty = true
+      disable_destroy_environments  = true
+      skip_redundant_deployments    = true
+    }
+  }
 }
