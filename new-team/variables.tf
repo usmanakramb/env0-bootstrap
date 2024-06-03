@@ -24,7 +24,7 @@ variable "policies" {
   description = "Policies in JSON format"
   type        = map(any)
   default     = {
-    dev = {
+    Dev = {
       number_of_environments        = 1
       number_of_environments_total  = 1
       requires_approval_default     = true
@@ -33,7 +33,7 @@ variable "policies" {
       disable_destroy_environments  = true
       skip_redundant_deployments    = true
     }
-    stage = {
+    Stage = {
       number_of_environments        = 2
       number_of_environments_total  = 2
       requires_approval_default     = false
@@ -42,7 +42,7 @@ variable "policies" {
       disable_destroy_environments  = true
       skip_redundant_deployments    = false
     }
-    prod = {
+    Prod = {
       number_of_environments        = 3
       number_of_environments_total  = 3
       requires_approval_default     = true
